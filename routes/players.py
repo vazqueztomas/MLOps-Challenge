@@ -1,6 +1,7 @@
-import uvicorn
-from fastapi import FastAPI
+from fastapi import APIRouter
 from pydantic import BaseModel
+
+router = APIRouter(prefix='/player')
 
 class FootballPlayer(BaseModel):
 	id: int
@@ -17,11 +18,7 @@ players = {
    4: FootballPlayer(id=5,fname="Exequiel", lname="Zeballos", age=20, isPlay=True)
 }
 
-app = FastAPI()
-#app get
-@app.get('/')
-async def root() -> dict[str, dict[int, FootballPlayer]]:
-    return {"players": players}
 
-if __name__ == "__main__":
-  uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+@router.get("/players")
+async def get_players():
+    return {"players": players}
