@@ -1,11 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
-from routes import players
+from routes import players, users
 
 
 app = FastAPI()
 
 app.include_router(players.router)
+app.include_router(users.router)
 #app get
 @app.get('/')
 async def root():

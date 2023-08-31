@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-router = APIRouter(prefix='/player')
+router = APIRouter(prefix='/players')
 
 class FootballPlayer(BaseModel):
 	id: int
@@ -19,6 +19,6 @@ players = {
 }
 
 
-@router.get("/players")
+@router.get("/")
 async def get_players():
     return {"players": players}
