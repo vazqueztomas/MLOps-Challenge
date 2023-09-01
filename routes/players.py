@@ -21,6 +21,7 @@ async def get_players():
 async def get_player_by_id(player_id: int):
     return search_player(player_id)
 
+
 @router.post("/", response_model=FootballPlayer)
 async def charge_player(player: FootballPlayer):
     try:
@@ -28,6 +29,7 @@ async def charge_player(player: FootballPlayer):
         return player
     except Exception as err:
         raise HTTPException(status_code=500, detail="Server error") from err
+    
     
 @router.put("/", response_model=FootballPlayer)
 async def update_player(player: FootballPlayer):
@@ -43,6 +45,15 @@ async def update_player(player: FootballPlayer):
         raise HTTPException(status_code=404, detail="User not found")
 
 
+@router.delete("/{player_id}")
+async def delete_player(player_id: int):
+    for index, player in enumerate(players):
+        if player.player_id == player_id:
+            del players[index]
+            return {"Player eliminated"}
+    
+    raise HTTPException(status_code=404, detail="User not exists")
+            
 
 def search_player(player_id: int):
     playerFound = filter(lambda p: p.player_id == player_id, players)
