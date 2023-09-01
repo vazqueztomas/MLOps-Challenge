@@ -11,6 +11,8 @@ Repo for FastAPI created in Python, for the MLOps challenge.
 
 </div>
 
+![image](https://github.com/vazqueztomas/MLOps-Challenge/assets/78186062/e67ad75f-6f0b-46ad-93dd-ee912bc692b8)
+
 ----
 # Introduction
 In accordance with the established requirements, a RESTful API has been developed using FastAPI and programmed in Python. This project not only demonstrates my solid knowledge in this field of development but also showcases my commitment to adhering to best practices. Throughout its development, I have diligently incorporated necessary tests and continuously improved my skills, learning along the way."
