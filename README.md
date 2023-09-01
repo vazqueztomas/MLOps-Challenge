@@ -15,6 +15,8 @@ Repo for FastAPI created in Python, for the MLOps challenge.
 # Introduction
 In accordance with the established requirements, a RESTful API has been developed using FastAPI and programmed in Python. This project not only demonstrates my solid knowledge in this field of development but also showcases my commitment to adhering to best practices. Throughout its development, I have diligently incorporated necessary tests and continuously improved my skills, learning along the way."
 
+You can check the API <a href = 'https://ml-ops-challenge.vercel.app/'>here</a>
+
 ----
 # Features
 
@@ -35,7 +37,15 @@ If you want to run this code in your pc or notebook, you need to clone this repo
 
 `$pip install -r requirements.txt`
 
+Later, you run the uvicorn server to test in local. Execute this command:
+
+`$ uvicorn main:app`
+
 If you want to see the API deployed on Vercel you need to <a href = 'https://ml-ops-challenge.vercel.app/'>**click here**</a>
+
+If you want to check the **test**, you need to execute:
+
+`pytest`
 
 # Usage
 
