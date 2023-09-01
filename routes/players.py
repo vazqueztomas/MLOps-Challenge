@@ -1,14 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from models.player import FootballPlayer
 
 router = APIRouter(prefix='/players')
-
-class FootballPlayer(BaseModel):
-	player_id: int
-	fname: str
-	lname: str
-	age: int
-	isPlay: bool
 
 players = [
    FootballPlayer(player_id=1,fname="Juan Roman", lname="Riquelme", age=42, isPlay=False), 
